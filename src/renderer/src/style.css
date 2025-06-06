@@ -1,0 +1,31 @@
+.tables {
+    border: black 1px solid;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.table {
+    border: 1px solid black;
+    padding: 30px;
+    display: flex;
+    position: relative;
+}
+
+.table:hover {
+    background-color: #67BA80;
+}
+
+.table-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+}

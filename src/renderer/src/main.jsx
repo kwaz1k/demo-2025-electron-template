@@ -1,10 +1,11 @@
-import './assets/main.css'
+import './style.css'
 
 import { StrictMode } from 'react'
 import { Routes, Route, HashRouter } from 'react-router'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <HashRouter>

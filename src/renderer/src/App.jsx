@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import electronLogo from './assets/electron.svg'
+import Tables from './Tables'
 
 function App() {
   useEffect(() => {
@@ -9,8 +9,7 @@ function App() {
 
   return (
     <>
-      <img alt="logo" className="logo" src={electronLogo} />
-      <h1>Hello, world!</h1>
+      <Tables />
     </>
   )
 }

@@ -2,16 +2,17 @@ import { app, shell, BrowserWindow, ipcMain, dialog } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
+import { getProducts, getProductsType } from './handler';
 
 import connectDB from './db';
 
 async function foo(event, data) {
-  try {
-    console.log(data)
-    dialog.showMessageBox({ message: 'message back' })
-  } catch (e) {
-    dialog.showErrorBox('Ошибка', e)
-  }
+  // try {
+  //   console.log(data)
+  //   dialog.showMessageBox({ message: 'message back' })
+  // } catch (e) {
+  //   dialog.showErrorBox('Ошибка', e)
+  // }
 }
 
 function createWindow() {
@@ -49,6 +50,8 @@ app.whenReady().then(async () => {
   global.dbclient = await connectDB();
 
   ipcMain.handle('sendSignal', foo)
+  ipcMain.handle('getProducts', getProducts)
+  ipcMain.handle('getProductsType', getProductsType)
 
   app.on('browser-window-created', (_, window) => {
     optimizer.watchWindowShortcuts(window)
